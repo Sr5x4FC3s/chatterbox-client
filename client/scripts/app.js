@@ -34,6 +34,17 @@ var app = {
     });
   },
   clearMessages: () => {
-    $('#chats').empty();
-  } 
+    $('#chats').empty(); 
+  },
+  renderMessage: (newMessage) => {
+    // please fix me!
+    var message = `<blink>${newMessage}</blink>`;
+    $('#chats').html(message);
+  },
+  renderRoom: (roomName) => {
+    // please fix me!
+    var room = `<option value=${roomName}>${roomName}</option>`;
+    $('#roomSelect').html(room);
+  }
+  
 };
