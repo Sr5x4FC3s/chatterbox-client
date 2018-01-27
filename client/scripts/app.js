@@ -16,7 +16,17 @@
 //     }
 //   });
 // };
-var myVar;
+var myVar; //get data
+
+//example data:
+
+// var Array = [{
+// createdAt: "2017-12-08T20:55:12.526Z"
+// objectId: "hEG6XDGsEE"
+// text: "cat was here"
+// updatedAt: "2017-12-08T20:55:12.526Z"
+// username: "cat"
+//},...];
 
 var app = {
   // server: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages',
@@ -43,12 +53,14 @@ var app = {
   },
   fetch: (message) => {
     // request('GET', message);
+
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
       url: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages',
       type: 'GET',
       data: message,
       contentType: 'application/json',
+      // dataType: 'jsonp',
       success: function (data) {
         console.log('chatterbox: Message received', data);
         // return this.data;
@@ -85,3 +97,8 @@ var app = {
   }
   
 };
+
+// set interval to fetch messages => save old data somewhere and append new instances to the body 
+setInterval(() => {
+  app.fetch();
+}, 5000);
