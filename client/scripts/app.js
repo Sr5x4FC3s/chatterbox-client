@@ -16,7 +16,15 @@
 //     }
 //   });
 // };
-var myVar; //get data
+var myVar;
+//= [{createdAt: "2017-12-08T20:55:12.526Z",
+//   objectId: "hEG6XDGsEE",
+//   text: "cat was here",
+//   updatedAt: "2017-12-08T20:55:12.526Z",
+//   username: "cat"}]; //get data
+
+
+
 
 //example data:
 
@@ -94,6 +102,19 @@ var app = {
       
     // });
     return 'goodbye';
+  },
+  postMesage: () => {
+    var index = 20;
+    while (index >= 0) {
+      if (myVar.results[index].text !== undefined) {
+        var messages = encodeURI(myVar.results[index].text);
+        var name = JSON.stringify(myVar.results[index].username); 
+        var $post = $('<blink></blink>');
+        $post.html(`${name}: ${messages}`);
+        $post.appendTo('#chats');
+      }
+      index -= 1;
+    }
   }
   
 };
@@ -101,4 +122,20 @@ var app = {
 // set interval to fetch messages => save old data somewhere and append new instances to the body 
 /*setInterval(() => {
   app.fetch();
+  app.postMesage();
 }, 5000);*/
+
+
+$(document).ready(function() {
+  
+    // app.postMesage();
+  // $('.submit').on('click', function(event) {
+
+  //   $('body').append($node);  
+  // });
+
+  // $('.username').on('click', function(event) {
+
+  //   $('body').append($node);  
+  // });
+});
