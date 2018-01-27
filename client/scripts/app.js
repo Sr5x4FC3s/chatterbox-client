@@ -1,6 +1,10 @@
 // YOUR CODE HERE:
 var app = {
-  init: () => {},
+  init: () => {
+    app.handleUsernameClick();
+    app.handleSubmit();
+
+  },
   send: (message) =>{
     $.ajax({
       // This is the url you should use to communicate with the parse API server.
@@ -37,14 +41,22 @@ var app = {
     $('#chats').empty(); 
   },
   renderMessage: (newMessage) => {
-    // please fix me!
-    var message = `<blink>${newMessage}</blink>`;
+    var message = `<blink>${newMessage.text}</blink>`;
     $('#chats').html(message);
   },
   renderRoom: (roomName) => {
-    // please fix me!
-    var room = `<option value=${roomName}>${roomName}</option>`;
+    var room = `<option value=${roomName.roomname}>${roomName.roomname}</option>`;
     $('#roomSelect').html(room);
+  },
+  handleUsernameClick: () => { 
+    $('.username').on('click', (event) => {
+      
+    });
+  },
+  handleSubmit: () => {
+    $('.submit').on('click', (event) => {
+      
+    });
   }
   
 };
