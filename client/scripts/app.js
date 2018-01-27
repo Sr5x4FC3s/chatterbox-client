@@ -58,7 +58,7 @@ var app = {
       // This is the url you should use to communicate with the parse API server.
       url: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages',
       type: 'GET',
-      data: message,
+      data: {order: '-createdAt'},
       contentType: 'application/json',
       // dataType: 'jsonp',
       success: function (data) {
@@ -99,6 +99,6 @@ var app = {
 };
 
 // set interval to fetch messages => save old data somewhere and append new instances to the body 
-setInterval(() => {
+/*setInterval(() => {
   app.fetch();
-}, 5000);
+}, 5000);*/
