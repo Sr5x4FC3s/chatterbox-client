@@ -47,15 +47,15 @@ body {
 }
 
 #send input {
-    width: 70%;
+    width: 38.95%;
     padding: 5px;
     font-size: 14px;
-    float: right;
+    float: center;
     margin: 3px;
 }
 
 #send .submit {
-    float: right;
+    float: center;
     margin: 4px 0;
     color: #fff;
     background-color: #2f7ba5;
@@ -113,3 +113,28 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+#main .roomSubmit {
+    float: right;
+    margin: 4px 0;
+    color: #fff;
+    background-color: #2f7ba5;
+    display: inline-block;
+    padding: 3px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #4cae4c;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#main input {
+    width: 40%;
+    height: 20%;
+    padding: 5px;
+    font-size: 12px;
+    float: right;
+    margin: 3px;
+}
